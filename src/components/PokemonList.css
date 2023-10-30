@@ -1,0 +1,15 @@
+/* .pokemon-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+.pokemon-item {
+  background-color: #49D0AF;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.pokemon-item h3 {
+  color: #fff;
+}

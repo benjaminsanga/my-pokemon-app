@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchPokemonDetail } from '../components/PokemonService';
 import PokemonDetail from '../components/PokemonDetail';
 
@@ -19,7 +19,6 @@ const PokemonDetailPage = () => {
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching Pokémon detail:', error);
-        // Handle error here, e.g., show an error message
         setIsLoading(false);
       }
     }
@@ -27,11 +26,10 @@ const PokemonDetailPage = () => {
     fetchData();
   }, [pokemonId]);
 
-  console.log(pokemon, 'pokemon');
-
   return (
-    <div className="pokemon-detail-page">
-      <h1>Pokémon Detail</h1>
+    <div className="text-center pokemon-detail-page">
+      <h1 className='mt-5 mb-0'>Pokémon Detail</h1>
+      <p className='mb-5'><Link to={'/'} className="text-decoration-none">Back Home</Link></p>
       {isLoading ? (
         <p>Loading...</p>
       ) : (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import PokemonList from '../components/PokemonList';
 import { fetchAllPokemon } from '../components/PokemonService';
+import SearchBar from '../components/SearchBar';
 
 const HomePage = () => {
   const navigate = useNavigate ();
@@ -28,9 +29,15 @@ const HomePage = () => {
     navigate(`/pokemon/${id}`);
   };
 
+  const onSearch = (term) => {
+    console.log(term, 'term');
+
+  }
+
   return (
     <div className="mt-5 mb-4 text-center home-page">
       <h1>Pokémon List</h1>
+      <SearchBar onSearch={onSearch}/>
       {isLoading ? (
         <p>Loading...</p>
       ) : (

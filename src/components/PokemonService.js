@@ -5,7 +5,6 @@ const API_BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
 export const fetchAllPokemon = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/`);
-    console.log(response.data, 'response.data')
     return response.data;
   } catch (error) {
     // Handle error here (e.g., show an error message)
